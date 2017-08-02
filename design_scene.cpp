@@ -206,9 +206,10 @@ void led_strip::save_to_file(QString& file_name)
         data.append(uint8_t(time_stamp >> 8));
         data.append(uint8_t(time_stamp & 0xFF));
         data.append(i);
-        data.append(uint8_t(0));
-        data.append(uint8_t(0));
-        data.append(uint8_t(0));
+        unsigned char black = 0;
+        data.append(black);
+        data.append(black);
+        data.append(black);
     }
     file.write(data);
     file.close();
