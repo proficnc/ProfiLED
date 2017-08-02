@@ -17,7 +17,7 @@
    <string>ProfiLED Designer</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="profiled_designer.qrc">
+   <iconset>
     <normaloff>:/icon/ProfiLED.bmp</normaloff>:/icon/ProfiLED.bmp</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
