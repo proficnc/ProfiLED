@@ -10,7 +10,7 @@
 #include <math.h>
 #include <QList>
 #include <QColor>
-
+#include <QFile>
 class design_scene;
 class pattern
 {
@@ -52,16 +52,19 @@ public:
     qint32 add_led(QGraphicsEllipseItem* led, QPointF loc);
     struct led_instance{
         QGraphicsEllipseItem *led;
+        QGraphicsSimpleTextItem *id;
         QPointF loc;
         QList<pattern> pattern_list;
-        led_instance(QGraphicsEllipseItem *_led, QPointF _loc) :
+        led_instance(QGraphicsEllipseItem *_led, QPointF _loc, QGraphicsSimpleTextItem *_id) :
             led(_led),
-            loc(_loc) {}
+            loc(_loc),
+            id(_id) {}
     };
     qint8 led_at_pos(QPointF pt);
     void set_led_pos(uint8_t led_id, QPointF loc);
     QGraphicsEllipseItem* get_led_byid(qint8 led_id);
     void add_pattern(qint8 led_id, pattern patt);
+    void save_to_file(QString& file_name);
     void set_loop_time(quint8 loop_time) { global_loop_time = loop_time; }
     inline QList<pattern> get_led_pattern_list(qint8 led_id)
     {
@@ -91,6 +94,7 @@ public:
     {
         return strip->get_led_pattern_list(led_id);
     }
+    void save_patterns_to_file(QString& file_name);
 
 signals:
 

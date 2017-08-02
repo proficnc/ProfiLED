@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>749</width>
-    <height>594</height>
+    <height>651</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -65,7 +65,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="globalSettings">
        <property name="geometry">
@@ -73,7 +73,7 @@
          <x>0</x>
          <y>0</y>
          <width>179</width>
-         <height>459</height>
+         <height>516</height>
         </rect>
        </property>
        <property name="accessibleName">
@@ -134,6 +134,19 @@
          <string>Pause</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="create_bin">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>170</y>
+          <width>81</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Create Bin</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="ledSettings">
        <property name="geometry">
@@ -141,7 +154,7 @@
          <x>0</x>
          <y>0</y>
          <width>179</width>
-         <height>459</height>
+         <height>516</height>
         </rect>
        </property>
        <attribute name="label">
@@ -426,6 +439,32 @@
          <number>100</number>
         </property>
        </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>450</y>
+          <width>111</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Delete LED</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>480</y>
+          <width>111</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Duplicate LED</string>
+        </property>
+       </widget>
        <zorder>solid_color_text</zorder>
        <zorder>solid_color</zorder>
        <zorder>pattern</zorder>
@@ -447,6 +486,8 @@
        <zorder>pattern_mid</zorder>
        <zorder>remove_pattern</zorder>
        <zorder>add_pattern</zorder>
+       <zorder>pushButton</zorder>
+       <zorder>pushButton_2</zorder>
       </widget>
      </widget>
     </item>
@@ -465,8 +506,6 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="profiled_designer.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

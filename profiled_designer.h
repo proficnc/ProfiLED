@@ -54,6 +54,8 @@ private slots:
     void color_dialog_handler(QColor color);
     void play_button_handler(bool action);
     void pause_button_handler(bool action);
+    void create_bin_handler(bool action);
+    void remove_pattern_handler(bool action);
     void newFile();
     void open();
     void save();

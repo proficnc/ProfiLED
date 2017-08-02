@@ -33,6 +33,8 @@ profiled_designer::profiled_designer(QWidget *parent) :
     QObject::connect(ui->add_pattern, SIGNAL(clicked(bool)), this, SLOT(add_pattern_handler(bool)));
     QObject::connect(ui->play_button, SIGNAL(clicked(bool)), this, SLOT(play_button_handler(bool)));
     QObject::connect(ui->pause_button, SIGNAL(clicked(bool)), this, SLOT(pause_button_handler(bool)));
+    QObject::connect(ui->create_bin, SIGNAL(clicked(bool)), this, SLOT(create_bin_handler(bool)));
+    QObject::connect(ui->remove_pattern, SIGNAL(clicked(bool)), this, SLOT(remove_pattern_handler(bool)));
     QObject::connect(timer, SIGNAL(timeout()), scene->get_led_strip(), SLOT(loop_player()));
 }
 
@@ -45,6 +47,18 @@ void profiled_designer::play_button_handler(bool action)
 void profiled_designer::pause_button_handler(bool action)
 {
     timer->stop();
+}
+
+void profiled_designer::create_bin_handler(bool action)
+{
+    QString fileName = QFileDialog::getSaveFileName(this,
+        tr("LED Designer Binary Files"), tr(".ledbin"));
+    scene->save_patterns_to_file(fileName);
+}
+
+void profiled_designer::remove_pattern_handler(bool action)
+{
+
 }
 
 void profiled_designer::led_selected_handler(qint8 led_id)
